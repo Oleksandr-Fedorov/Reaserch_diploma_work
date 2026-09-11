@@ -1,0 +1,121 @@
+// @use '../helpers/' as *;
+
+// .button {
+// 	display: inline-flex;
+// 	justify-content: center;
+// 	padding: rem(18) rem(24);
+// 	font-size: rem(18);
+// 	&:hover {
+// 		color: #2c2600ff;
+// 		background: #cdae00ff;
+// 	}
+
+// 	@include laptop {
+// 		padding: rem(14) rem(20);
+// 	}
+
+// 	&--primary {
+// 		color: var(--color-light-primary);
+// 		border: var(--border-buttons-primary);
+// 		border-radius: rem(15);
+// 		background-color: var(--color-navy);
+// 	}
+
+// 	&--secondary {
+// 		color: var(--color-dark-primary);
+// 		border: var(--border-buttons-secondary);
+// 		border-radius: rem(10);
+// 		background-color: var(--color-light-primary);
+// 	}
+
+// 	&--danger {
+// 		color: var(--color-light-primary);
+// 		border: var(--border-buttons-danger);
+// 		border-radius: rem(10);
+// 		background-color: var(--color-danger);
+// 	}
+
+// 	&--success {
+// 		color: var(--color-light-primary);
+// 		border: var(--border-buttons-success);
+// 		border-radius: rem(10);
+// 		background-color: var(--color-success);
+// 	}
+// }
+
+@use '../helpers' as *;
+
+.button {
+	// База
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: rem(14) rem(24); // Чуть меньше паддинги, выглядит аккуратнее
+
+	font-family: var(--font-family-base);
+	font-weight: 600;
+	font-size: rem(16);
+	line-height: 1.2;
+	text-decoration: none;
+	cursor: pointer;
+
+	// Геометрия
+	border: var(--border-width) solid transparent; // Резервируем место под бордер
+	border-radius: var(--radius-md);
+
+	// Анимация
+	transition: all var(--transition-duration) ease-in-out;
+
+	// Отключение (Disabled)
+	&:disabled,
+	&--disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+		filter: grayscale(1);
+		pointer-events: none; // Чтобы не кликалось
+	}
+
+	// Нажатие (Active) - кнопка чуть уменьшается
+	&:active {
+		transform: scale(0.98);
+	}
+
+	// --- ВАРИАНТЫ ---
+
+	// PRIMARY (Синяя с белым текстом)
+	&--primary {
+		background-color: var(--color-primary);
+		color: var(--color-text-main);
+		border-color: var(--color-primary); // Или transparent
+
+		&:hover {
+			background-color: var(--color-accent); // Твой золотой
+			border-color: var(--color-accent);
+			color: var(--color-text-inverse); // Черный текст на золотом
+			box-shadow: 0 0 rem(15) rgba(205, 174, 0, 0.4); // Свечение
+		}
+	}
+
+	// SECONDARY (Прозрачная с рамкой - "Ghost button")
+	&--secondary {
+		background-color: transparent;
+		color: var(--color-text-main);
+		border-color: var(--color-white);
+
+		&:hover {
+			background-color: var(--color-white);
+			color: var(--color-text-inverse);
+		}
+	}
+
+	&--accent {
+		background-color: var(--color-brand-accent); // Золотой
+		color: var(--color-black); // Черный текст (на золотом лучше черный)
+		border-color: var(--color-brand-accent);
+
+		&:hover {
+			background-color: #ffdb1a; // Чуть светлее золото при ховере
+			box-shadow: 0 0 rem(20) rgba(205, 174, 0, 0.6);
+		}
+	}
+}

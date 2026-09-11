@@ -1,0 +1,19 @@
+@use 'normalize';
+@use 'fonts';
+@use 'globals';
+@use 'utils';
+@use 'variables';
+
+@use 'blocks/icon';
+@use 'blocks/button';
+
+@use 'blocks/header';
+@use 'blocks/footer';
+
+@use 'blocks/burger-button';
+@use 'blocks/logo';
+
+@use 'blocks/hero';
+@use 'blocks/select';
+@use 'blocks/search';
+@use 'blocks/form-control';

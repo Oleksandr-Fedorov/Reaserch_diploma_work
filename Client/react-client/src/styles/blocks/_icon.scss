@@ -1,0 +1,38 @@
+@use '../helpers' as *;
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	column-gap: rem(12);
+
+	&::after {
+		--size: #{rem(24)};
+
+		@include square(var(--size));
+		content: '';
+		flex-shrink: 0;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
+	&-dropdown-arrow {
+		&:hover {
+			cursor: pointer;
+			color: var(--color-accent-hover);
+			//изменение цвета текста
+		}
+		&::after {
+			&:hover {
+				background-color: var(--color-accent-hover);
+			}
+			background-image: url('../../../public/arrow-down.svg');
+		}
+	}
+
+	&-search {
+		&::after {
+			background-image: url('../../../public/search.svg');
+		}
+	}
+}

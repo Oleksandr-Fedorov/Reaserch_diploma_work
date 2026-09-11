@@ -1,0 +1,335 @@
+@use "../../../styles/helpers/" as *; // Предполагаю ваш путь к хелперам
+
+.aegis-analytics {
+  width: 25vw;
+  height: 100%;
+  min-width: rem(320);
+  max-width: rem(450);
+  background-color: var(--color-aegis-panel);
+
+  border-left: 1px solid var(--color-aegis-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow-y: auto;
+
+  @include laptop {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    border-left: none;
+    border-top: 1px solid var(--color-aegis-border);
+    overflow-y: visible;
+  }
+
+  /* --- Состояния загрузки и отсутствия данных --- */
+  &__state-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: rem(16);
+    text-align: center;
+    padding: rem(24);
+  }
+
+  &__icon-pulse {
+    width: rem(32);
+    height: rem(32);
+    color: var(--color-aegis-accent);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  &__icon-circle {
+    width: rem(48);
+    height: rem(48);
+    border-radius: 50%;
+    border: 1px solid var(--color-aegis-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-aegis-text-muted);
+  }
+
+  &__state-text {
+    display: flex;
+    flex-direction: column;
+    gap: rem(4);
+  }
+
+  &__code-highlight {
+    font-family: var(--font-family-data);
+    font-size: rem(12);
+    color: var(--color-aegis-accent);
+    letter-spacing: 0.1em;
+  }
+
+  &__label {
+    font-family: var(--font-family-data);
+    font-size: rem(12);
+    color: var(--color-aegis-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__subtext {
+    font-family: var(--font-family-data);
+    font-size: rem(10);
+    color: var(--color-aegis-text-muted);
+  }
+
+  &__description {
+    font-size: rem(11);
+    color: var(--color-aegis-text-muted);
+    line-height: 1.6;
+    font-family: var(--font-family-base);
+  }
+
+  /* --- Контент панели --- */
+  &__content {
+    flex: 1;
+    overflow-y: auto;
+    padding: rem(16);
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+    user-select: text; /* Разрешаем выделение текста для отчетов */
+  }
+
+  /* --- Кнопка экспорта --- */
+  &__export-btn {
+    width: 100%;
+    height: rem(44);
+    min-height: rem(44);
+    background-color: #1A2542; /* Цвет из дизайна для кнопки футера */
+    color: var(--color-aegis-text-primary);
+    font-size: rem(11);
+    font-family: var(--font-family-data);
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(8);
+    border-top: 1px solid var(--color-aegis-border);
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color var(--transition-duration);
+    user-select: none;
+
+    &:hover {
+      background-color: #243058;
+    }
+
+    &:active {
+      transform: scale(0.99);
+    }
+  }
+}
+
+/* --- Вспомогательные классы для цвета (замена Tailwind) --- */
+.aegis-text-fake { color: var(--color-aegis-fake); }
+.aegis-text-auth { color: var(--color-aegis-auth); }
+.aegis-text-accent { color: var(--color-aegis-accent); }
+.aegis-bg-fake { background-color: var(--color-aegis-fake); }
+.aegis-bg-auth { background-color: var(--color-aegis-auth); }
+.aegis-font-bold { font-weight: bold; }
+
+/* --- Общие заголовки секций --- */
+.aegis-section-title {
+  font-size: rem(10);
+  font-weight: bold;
+  font-family: var(--font-family-base);
+  color: var(--color-aegis-text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+}
+
+/* --- Block 1: Verdict --- */
+.aegis-verdict {
+  display: flex;
+  flex-direction: column;
+  gap: rem(4);
+  border-bottom: 1px solid rgba(26, 37, 66, 0.5); /* border-grid/50 */
+  padding-bottom: rem(20);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: rem(6);
+    margin-top: rem(4);
+  }
+
+  &__title {
+    font-size: rem(16);
+    font-weight: bold;
+    font-family: var(--font-family-base);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &__score-block {
+    display: flex;
+    flex-direction: column;
+    margin-top: rem(10);
+  }
+
+  &__score {
+    font-size: rem(36);
+    font-weight: bold;
+    font-family: var(--font-family-data);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  &__score-label {
+    font-size: rem(12);
+    text-transform: uppercase;
+    font-family: var(--font-family-base);
+    font-weight: 500;
+    color: var(--color-aegis-text-muted);
+    margin-left: rem(8);
+  }
+
+  &__hash {
+    font-size: rem(10);
+    font-family: var(--font-family-data);
+    color: var(--color-aegis-text-muted);
+    margin-top: rem(4);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* --- Block 2: Metrics --- */
+.aegis-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+    font-family: var(--font-family-data);
+    font-size: rem(11);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: rem(4);
+  }
+
+  &__label-row {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-aegis-text-primary);
+  }
+
+  &__track {
+    height: rem(6);
+    width: 100%;
+    background-color: var(--color-aegis-void);
+    border: 1px solid var(--color-aegis-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  &__fill {
+    height: 100%;
+    transition: width 0.3s ease;
+  }
+}
+
+/* --- Block 3: Terminal --- */
+.aegis-terminal {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__badge {
+    font-size: rem(9);
+    font-family: var(--font-family-data);
+    color: var(--color-aegis-accent);
+    letter-spacing: 0.05em;
+    background-color: rgba(56, 189, 248, 0.1); /* accent/10 */
+    padding: rem(2) rem(4);
+    border-radius: var(--radius-sm);
+  }
+
+  &__window {
+    background-color: var(--color-aegis-void);
+    border: 1px solid var(--color-aegis-border);
+    border-radius: var(--radius-sm);
+    padding: rem(12);
+    height: rem(224);
+    overflow-y: auto;
+    font-family: var(--font-family-data);
+    font-size: rem(11);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: rem(6);
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+
+    &--header {
+      color: var(--color-aegis-text-muted);
+      user-select: none;
+      padding-bottom: rem(4);
+      border-bottom: 1px solid rgba(26, 37, 66, 0.4);
+      margin-bottom: rem(4);
+    }
+  }
+
+  &__label {
+    color: var(--color-aegis-text-muted);
+  }
+
+  &__value {
+    color: var(--color-aegis-text-primary);
+    margin-left: rem(8);
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__hash-block {
+    border-top: 1px solid rgba(26, 37, 66, 0.4);
+    margin-top: rem(6);
+    padding-top: rem(6);
+    display: flex;
+    flex-direction: column;
+    gap: rem(2);
+  }
+
+  &__hash-label {
+    font-size: rem(10);
+    color: var(--color-aegis-text-muted);
+  }
+
+  &__hash-value {
+    font-size: rem(10);
+    color: var(--color-aegis-accent);
+    word-break: break-all;
+  }
+}

@@ -1,0 +1,138 @@
+@use '../../styles/helpers/' as *;
+.aegis-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--color-aegis-void);
+  color: var(--color-aegis-text-primary);
+  font-family: var(--font-family-base); /* Ваш Inter */
+  user-select: none;
+
+  &__header {
+    height: rem(56);
+    min-height: rem(56);
+    border-bottom: 1px solid var(--color-aegis-border);
+    background-color: var(--color-aegis-panel);
+    padding: 0 rem(16);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 20;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: rem(12);
+  }
+
+  &__logo-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(32);
+    height: rem(32);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-aegis-border);
+    background-color: var(--color-aegis-void);
+    color: var(--color-aegis-accent);
+    font-family: var(--font-family-data);
+    font-weight: bold;
+    font-size: rem(12);
+    letter-spacing: 0.05em;
+  }
+
+  &__logo-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: rem(14);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity var(--transition-duration);
+    &:hover { opacity: 0.8; }
+  }
+
+  &__subtitle {
+    font-size: rem(9);
+    font-family: var(--font-family-data);
+    color: var(--color-aegis-text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__nav {
+     display: flex;
+    @include tablet {
+       display: none; // Скрыто на мобильных
+    }
+    gap: rem(32);
+    font-size: rem(11);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__nav-item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 rem(4);
+    cursor: pointer;
+    color: var(--color-aegis-text-muted);
+    border-bottom: 2px solid transparent;
+    transition: color var(--transition-duration);
+
+    &:hover { color: var(--color-aegis-text-primary); }
+
+    &--active {
+      color: var(--color-aegis-text-primary);
+      border-bottom-color: var(--color-aegis-accent);
+      cursor: default;
+    }
+  }
+
+  &__widgets {
+    display: flex;
+    align-items: center;
+    gap: rem(12);
+  }
+
+  &__status-badge {
+    display: none;
+    @include tablet {
+      display: flex;
+    }
+    align-items: center;
+    gap: rem(8);
+    padding: rem(4) rem(12);
+    background-color: var(--color-aegis-void);
+    border: 1px solid var(--color-aegis-border);
+    border-radius: var(--radius-sm);
+    font-size: rem(11);
+    font-family: var(--font-family-data);
+    color: var(--color-aegis-text-muted);
+  }
+
+  &__status-dot {
+    width: rem(6);
+    height: rem(6);
+    border-radius: 50%;
+    background-color: var(--color-aegis-accent);
+    animation: pulse 2s infinite; // Если нужен пульс, можно добавить кейфрейм или убрать
+  }
+
+  &__main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+}

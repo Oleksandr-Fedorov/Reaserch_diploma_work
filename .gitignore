@@ -1,0 +1,8 @@
+Доклад/
+models/
+datasets/
+target/
+.venv/
+node_modules/
+*.pth
+__pycache__/

@@ -1,0 +1,65 @@
+@use "../helpers" as *;
+
+.search-form {
+  background-color: var(--color-bg-surface);
+  padding: rem(24);
+  border-radius: var(--radius-lg);
+
+  &__title {
+    margin-bottom: rem(24);
+    text-align: center;
+    color: var(--color-white);
+    font-family: var(--font-family-try1); // Заголовочный шрифт
+  }
+
+  &__grid {
+    display: grid;
+    // На десктопе 2 колонки, на мобильном 1
+    grid-template-columns: 1fr 1fr;
+    gap: rem(16); // Отступ между ячейками
+    margin-bottom: rem(24); // Отступ до нижней строки поиска
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: rem(16);
+    align-items: stretch; // Чтобы кнопка и инпут были одной высоты
+
+    @include mobile {
+      flex-direction: column; // На телефоне кнопка упадет под инпут
+    }
+  }
+
+  &__input-wrapper {
+    position: relative;
+    flex-grow: 1; // Занимает всё свободное место
+    width: 100%;
+
+    svg {
+      position: absolute;
+      left: rem(16); // Отступ слева
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none; // Чтобы клик проходил сквозь иконку в инпут
+
+      @include square(2em); // Размер иконки
+
+      path,
+      circle,
+      rect {
+        stroke: rgba(255, 255, 255, 0.5); // Делаем иконку полупрозрачной белой
+        fill: transparent; // Если нужно убрать заливку
+      }
+    }
+  }
+
+  // Кнопка поиска не должна сжиматься
+  &__btn {
+    flex-shrink: 0;
+    min-width: rem(140);
+  }
+}

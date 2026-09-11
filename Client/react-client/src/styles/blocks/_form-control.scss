@@ -1,0 +1,46 @@
+@use "../helpers" as *;
+
+// Этот класс вешается и на input, и на Select Trigger
+.form-control {
+  width: 100%;
+  height: var(--input-height);
+  padding-left: rem(50);
+
+  // Фон и Границы
+  background-color: var(--color-bg-input); // Синий фон (#0b1a5f)
+  border: 1px solid var(--color-brand-light); // Светло-синяя рамка
+  border-radius: var(--radius-md);
+
+  // Текст
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: rem(16);
+
+  // Flexbox нужен для выравнивания иконки и текста внутри Select Trigger
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  transition: all 0.2s ease;
+  outline: none; // Убираем стандартную обводку браузера
+
+  // Placeholder (текст подсказки)
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+  }
+
+  // Состояние Фокуса (когда кликнули)
+  &:focus,
+  &:focus-visible,
+  &[data-state="open"] {
+    // Для открытого Radix Select
+    border-color: var(--color-brand-accent); // Золотая рамка
+    box-shadow: 0 0 0 rem(4) rgba(205, 174, 0, 0.2); // Легкое золотое свечение
+  }
+
+  // Если Radix сообщает об ошибке (data-invalid)
+  &[data-invalid] {
+    border-color: var(--color-status-error);
+  }
+}

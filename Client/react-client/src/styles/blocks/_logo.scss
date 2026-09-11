@@ -1,0 +1,10 @@
+@use '../helpers' as *;
+
+.logo {
+	max-width: fluid(250, 126);
+}
+
+.logo__img {
+	display: block;
+	width: 100%;
+}

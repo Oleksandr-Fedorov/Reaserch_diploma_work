@@ -1,0 +1,112 @@
+@use "../styles/helpers/" as *; 
+
+/* --- Main Container Wrapper --- */
+.aegis-app {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--color-aegis-void);
+  
+  @include laptop { // Или ваша медиа-кверя для lg экранов (напр. min-width: 1024px)
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  &__workspace {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    position: relative;
+
+    @include laptop {
+      height: auto;
+      min-height: rem(500); // Для правильной работы flex-overflow
+    }
+  }
+}
+
+/* --- Header Actions --- */
+.aegis-header-actions {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+}
+
+.aegis-btn {
+  display: flex;
+  align-items: center;
+  gap: rem(6);
+  padding: rem(6) rem(12);
+  font-family: var(--font-family-data);
+  font-size: rem(12);
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-duration);
+  user-select: none;
+
+  &--outline {
+    border: 1px solid var(--color-aegis-border);
+    background-color: var(--color-aegis-void);
+    color: var(--color-text-main);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: rgba(56, 189, 248, 0.5); /* accent blue с прозрачностью */
+    }
+  }
+
+  &__icon {
+    color: var(--color-aegis-accent);
+  }
+}
+
+.aegis-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: rem(6);
+  background-color: var(--color-aegis-void);
+  border: 1px solid var(--color-aegis-border);
+  padding: rem(4) rem(10);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family-data);
+  font-size: rem(10);
+  color: var(--color-aegis-text-muted);
+
+  &__icon {
+    color: var(--color-aegis-accent);
+    animation: spin 3s linear infinite; // Либо уберите, если не нужно кручение
+  }
+}
+
+/* --- HUD Notification --- */
+.aegis-notification {
+  position: absolute;
+  bottom: rem(16);
+  left: rem(16);
+  z-index: 50;
+  background-color: var(--color-aegis-panel);
+  border: 1px solid var(--color-aegis-accent);
+  color: var(--color-aegis-accent);
+  font-family: var(--font-family-data);
+  font-size: rem(10);
+  padding: rem(8) rem(12);
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5); // shadow-2xl equivalent
+
+  &__dot {
+    width: rem(6);
+    height: rem(6);
+    border-radius: 50%;
+    background-color: var(--color-aegis-accent);
+    // animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+}

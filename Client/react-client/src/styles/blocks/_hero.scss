@@ -1,0 +1,77 @@
+@use '../helpers' as *;
+
+.hero {
+	&__main {
+	}
+	&__body {
+		@include tablet-above {
+			display: grid;
+			grid-template-columns: 3fr 2fr;
+			grid-template-rows: 2fr 1fr;
+			column-gap: rem(40);
+			grid-template-areas:
+				'text_ img'
+				'btn img';
+		}
+	}
+	&__btn {
+		grid-area: btn;
+		justify-self: center;
+	}
+	&__img {
+		padding: rem(16);
+		grid-area: img;
+		width: 100%;
+		border-radius: rem(25);
+	}
+	&__text {
+		grid-area: text_;
+
+		padding-left: rem(40);
+		& h2 {
+			margin-block-end: rem(21);
+			margin-block-start: rem(36);
+		}
+
+		@include laptop {
+			padding-bottom: 1rem;
+		}
+	}
+
+	&__search {
+		padding-block: rem(40);
+
+		display: flex;
+		column-gap: rem(50);
+		flex-direction: column;
+		@include tablet-above {
+			flex-direction: row;
+		}
+
+		&-text {
+			flex-grow: 1;
+			flex-shrink: 1;
+			flex-basis: 0%;
+
+			@include mobile {
+				padding-left: 2.5rem;
+			}
+		}
+
+		&-main {
+			border-radius: 1.25rem;
+			flex-grow: 1;
+			flex-shrink: 0;
+			flex-basis: 0%;
+			padding: rem(20);
+			background-color: var(--color-back-panel);
+		}
+	}
+
+	&__link {
+		font-size: rem(20);
+		&:hover {
+			color: var(--color-navy);
+		}
+	}
+}

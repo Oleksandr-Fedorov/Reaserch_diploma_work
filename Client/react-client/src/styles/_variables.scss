@@ -1,0 +1,102 @@
+@use "helpers" as *;
+
+:root {
+  /* --- Forensic Theme --- */
+ --color-aegis-bg-void: #050a15;
+  --color-aegis-bg-panel: #0b132b;
+  --color-aegis-border: #1a2542;
+  
+  --color-aegis-accent: #38bdf8;
+  --color-aegis-fake: #ef4444;
+  --color-aegis-auth: #10b981;
+
+  --color-aegis-text-main: #ffffff;
+  --color-aegis-text-muted: #64748b;
+
+  --font-family-data: "JetBrains Mono", monospace;
+
+  /* --- Базова палітра (Константи) --- */
+  --palette-royal-blue-saturated: #1a36b1; // Насичений для темної теми
+  --palette-royal-blue-soft: #4a69e2; // Гармонійний для світлої теми
+  --palette-gold: #cdae00; // Твій акцент
+
+  /* --- Темна тема (Default) --- */
+  --color-bg-body: #0a0a0a;
+  --color-bg-surface: #161616;
+  --color-text-main: #ffffff;
+  --color-text-muted: #a0a0a0;
+
+  /* Твої вкладки (Королівський синій) */
+  --color-tab-bg: var(--palette-royal-blue-saturated);
+  --color-tab-text: #ffffff;
+
+  --color-accent: var(--palette-gold);
+  --color-input-bg: #0b1a5f;
+
+  /* --- Colors --- */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-dark: #121212;
+
+  --color-brand-dark: #0b1a5f;
+  --color-brand-light: #4e5c99;
+  --color-brand-accent: #cdae00;
+
+  --color-bg-body: #000000;
+  --color-bg-surface: #111111;
+  --color-bg-input: #0b1a5f;
+
+  --color-status-error: #ff4d4f;
+
+  /* --- Semantics (Роли) --- */
+  --color-primary: var(--color-brand-dark);
+  --color-border: var(--color-brand-light);
+  --color-focus: var(--color-brand-accent); // Золотой фокус
+
+  /* --- Dimensions --- */
+  --radius-sm: #{rem(8)};
+  --radius-md: #{rem(12)};
+  --radius-lg: #{rem(20)};
+
+  --input-height: #{rem(48)};
+
+  --border: var(--color-navy-border) #{rem(1)} solid;
+  --border-buttons: var(--сolor-light-grey) #{rem(1.5)} solid;
+  --border-buttons-primary: #ffffff #{rem(1.7)} solid;
+
+  --font-family-base: "Inter", sans-serif;
+  --font-family-accent: "Poppins", sans-serif;
+  --font-family-try1: "Red Hat Display 500", sans-serif;
+  --font-family-try2: "Red Hat Display 300", sans-serif;
+
+  --container-width: #{rem(1600)};
+  --container-padding-x: #{rem(16)};
+
+  --transition-duration: 0.25s;
+
+  @include laptop {
+    --container-width: #{rem(1280)};
+  }
+
+  @include tablet {
+    --container-width: #{rem(1024)};
+  }
+
+  @include mobile {
+    --container-width: 100%;
+    --container-padding-x: #{rem(12)};
+  }
+}
+[data-theme="light"] {
+  --color-bg-body: #f8f9fc;
+  --color-bg-surface: #ffffff;
+  --color-text-main: #1a1a1a;
+  --color-text-muted: #64748b;
+
+  /* Твої вкладки (Стають більш "м'якими") */
+  --color-tab-bg: var(--palette-royal-blue-soft);
+  --color-tab-text: #ffffff;
+
+  --color-accent: #b89b00; // Трохи темніший золотий для контрасту на білому
+  --color-input-bg: #e2e8f0;
+}

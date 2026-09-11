@@ -1,0 +1,52 @@
+@use '../helpers' as *;
+
+.footer {
+	border-top: var(--border-buttons);
+	padding-block: fluid(50, 20);
+
+	&__inner {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		@include tablet {
+			flex-direction: column;
+			row-gap: 2rem;
+		}
+		@include mobile {
+			row-gap: 1rem;
+		}
+	}
+	&__socials {
+		display: flex;
+		align-items: center;
+
+		&-list {
+			display: flex;
+			align-items: center;
+		}
+		&-item {
+			padding: rem(10) rem(15);
+			//Убираем для ссылок которые inline-flex
+			line-height: 0;
+		}
+
+		&-link {
+			--size: #{rem(24)};
+
+			@include square(var(--size));
+
+			color: var(--color-light);
+
+			@include laptop {
+				--size: #{rem(20)};
+			}
+		}
+	}
+}
+
+.phone {
+	background-color: rgba(255, 255, 255, 0.719);
+	padding: rem(2);
+	border-radius: 100%;
+}
