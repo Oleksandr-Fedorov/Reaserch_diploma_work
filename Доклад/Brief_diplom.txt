@@ -1,0 +1,180 @@
+# PROJECT BRIEFING v2: Image Manipulation Detector — Master's Thesis
+### (Context transfer — long conversation, multiple AI sessions, extensive hands-on experimentation)
+
+This is an updated context-transfer document. It supersedes the original briefing but preserves its structure. Read fully before advising. This project has gone through a long, iterative, evidence-driven diagnostic process — several early hypotheses were tested and refined, not guessed at. Do not propose changing the topic. Do not propose architecture changes or new datasets/signals without checking Section 9 (guardrails) first.
+
+---
+
+## 1. WHO I AM
+
+Master's student in Computer Science. Thesis defense timeline: was ~4-5 months out at project start; substantial iterative work has happened since, still comfortably ahead of pace. Committee: applied mathematicians, microcontroller/acoustics/ballistics specialists — not deep-ML experts. Narrative clarity and measurable, honestly-obtained results matter more than implementation minutiae or fashionable architecture.
+
+Technical profile: familiar with classical neural nets (Hopfield, Hamming, Kohonen, ART), has built a music genre classifier before, comfortable with web apps/interfaces, some low-level optimization experience (C/C++/Rust, AI-assisted). Weak local GPU; uses Google Colab (~5h/day) plus Kaggle (30h/week, T4x2), Lightning AI, SageMaker Studio Lab, Paperspace Gradient as needed.
+
+Thesis formal requirements (unchanged): research novelty, engineering complexity, measurable results with comparison, experimental section, theoretical grounding/survey, working prototype with interface, topical relevance.
+
+**Psychological note carried from original briefing, still relevant:** documented pattern of topic-hopping and scope-expansion anxiety. In this phase, the pattern has mostly shown up as *gathering sequential opinions from multiple different AI assistants* on the same decision points before acting. This has still produced real, convergent, executable progress — multiple independently-consulted models arrived at the same "diagnose before you architect" conclusion — but if this pattern continues indefinitely without executing on already-consistent advice, gently flag it and encourage convergence over further opinion-collecting.
+
+---
+
+## 2. TOPIC (FIXED — DO NOT SUGGEST CHANGING)
+
+Image manipulation detector with localization and explainability. Three components: (1) ELA module — hand-implemented, non-ML, Error Level Analysis; (2) CNN classifier fine-tuned on ELA maps; (3) GradCAM — explainability heatmap.
+
+Original research question: *Does ELA preprocessing improve CNN accuracy vs. raw images?* — Answered yes (see Section 3). Current, more specific research question, now the real frontier of the project: *Is a CNN trained on ELA maps robust to variation in JPEG recompression history, and if not, why — data narrowness, a fixable training-procedure artifact, or an inherent ELA information ceiling?*
+
+---
+
+## 3. PHASE 1 (ORIGINAL WORK — COMPLETE, FOUNDATIONAL)
+
+- **ELA hand-implementation** (`ela.py`), tested manually on CASIA1 pairs. Found: strong signal when splice/background compression histories differ; weak/noisy when similar; **no signal at all when the whole composite is uniformly resaved** (the "bird-in-garden" case) — this early finding turned out to be the seed of everything that followed.
+- **Dataset prep:** CASIA1 Au/Sp → 1721 ELA maps, fixed ELA reference quality = 75, standard 80/20 split.
+- **Four training experiments** (CASIA1 only): Simple CNN raw RGB (50.7% acc, no signal); Simple CNN + ELA (76%, F1 0.70); ResNet18 frozen backbone + ELA (70%, F1 0.70, ImageNet weights suboptimal for ELA textures); **ResNet18 full fine-tune + ELA (86% acc, F1 0.85 — best result at the time)**.
+- GradCAM implemented; showed the network attending to splice boundaries (JPEG block-grid mismatch), not object interior — physically sensible.
+- **Full-stack prototype "AEGIS // VISION"**: FastAPI backend (in-memory ELA generation matching training-time math, ResNet18 inference, GradCAM overlay) + forensic-analyst-styled frontend (verdict, confidence %, ELA/heatmap toggle, metadata panel).
+- **Known unresolved issue, flagged early, still open:** frontend has hardcoded fake sub-metrics ("Noise Inconsistency: 84.1%") and fake EXIF data not derived from real computation — a defense risk (committee could ask how a displayed number is computed; there'd be no real answer).
+
+---
+
+## 4. THE CORE PROBLEM DISCOVERED (what triggered everything below)
+
+Testing the deployed model outside its training distribution revealed a genuine generalization failure, not bad luck:
+- A manually-composited real/real splice, freshly resaved as JPEG → classified REAL, high confidence (recompression flattened the ELA signal — matches the original bird-in-garden finding).
+- A real CASIA2 splice (model trained only on CASIA1) → classified AUTHENTIC at 95.99% confidence.
+
+Two original candidate hypotheses: **A** (data/generalization — overfit to CASIA1-specific characteristics) vs. **B** (feature-sufficiency — ELA is fundamentally blind to certain manipulation types, no amount of data fixes it). Believed likely a mix. This was **not yet rigorously tested** at the start of Phase 2 below — it has been tested extensively since, with real evidence now behind a refined version of this split.
+
+---
+
+## 5. PHASE 2: DIAGNOSTIC DEEP DIVE — THE "QUANTIZATION RESONANCE" DISCOVERY
+
+**Step 0 diagnostics were run as originally planned:** a recompression-robustness test (same image, sweep of primary JPEG qualities, fixed ELA reference quality, check confidence stability).
+
+### 5.1 First iteration (single image)
+Reviewed and found two silent-failure risks before trusting results: (1) confirm which class index is FAKE (must match training-time `class_to_idx`, don't assume); (2) confirm the ELA reference quality hardcoded in the diagnostic script (`quality=75`) exactly matches what dataset generation actually used — don't assume.
+
+### 5.2 Three-image version (2 fakes + 1 authentic control, from CASIA2)
+Produced a chart showing all three images — regardless of true label — spiking to ~95–99% FAKE confidence at **one specific point**, with confidence near-zero everywhere else. Initial visual read of *where* this spike occurred was ambiguous (Q=85 vs Q=75, easy to misjudge from unlabeled intermediate tick marks). **Resolved via exact printed per-quality values**: the spike is at **exactly Q=75**, which is exactly the hardcoded ELA reference quality in the script.
+
+### 5.3 Diagnosis: Quantization Resonance / "JPEG Ghosts"-style artifact
+When the simulated primary/redistribution JPEG quality coincides exactly with the internal ELA-extraction reference quality, a double-quantization interaction produces an anomalous, content-independent, saturated ELA response — the network then reads this as FAKE regardless of whether the image was ever manipulated. Related to Farid's "JPEG Ghosts" (2009) double-compression artifact literature — a citable, legitimate theoretical grounding point, not just an empirical oddity. Two competing verbal descriptions were offered by different AIs ("black hole"/near-zero diff vs. "dense block-grid noise") — recommended settling this by literally saving the anomalous ELA map image at the collision point, for a thesis figure.
+
+### 5.4 The "Ultimate Test" (100 fake + 100 real CASIA1, full 100→50 quality sweep, fixed ELA ref=75)
+This was the single most information-dense diagnostic run in the project. Found:
+- **Accuracy near chance (46–62%) at literally every tested quality**, not just at the Q=75 resonance point (~51.5% there) — i.e., the model has essentially **zero robustness margin to even one extra resave step, at any quality**, not just a narrow resonance. Much stronger evidence for a broad, data-narrowness-driven failure (Hypothesis A) than the three-image test alone suggested.
+- **A previously-unflagged directional finding**: comparing mean FAKE-confidence vs. mean REAL-confidence at each quality, the *ranking* is correct-direction (fake > real) from Q100 down through ~Q80, but **inverts below ~Q70** — authentic images score *more* "fake" than actual fakes (e.g. at Q50: fake conf 11.55%, real conf 20.66%). This means degradation isn't just "loses power" — it becomes actively backwards at low quality, which no amount of threshold recalibration alone can fix.
+
+This reframed the working diagnosis from "narrow domain, generalizes poorly" to something more specific and more useful: **the model overfit to CASIA1's un-resaved JPEG artifact signature specifically, and separately, treats the Q75 resonance as a degenerate special case** — two related but distinguishable problems.
+
+---
+
+## 6. THE ARCHITECTURE DEBATE — RESOLVED IN FAVOR OF "DIAGNOSE BEFORE ARCHITECT"
+
+Multiple rounds of advice from different AI sessions were received and critically evaluated:
+- One proposal: jump straight to a two-branch fusion architecture (separate ELA + noise-residual branches), citing RGB-N-style forensics literature precedent.
+- A more skeptical round: don't build dual-stream yet; test cheaper multi-channel stacking first; **run the diagnostics above before any architecture change**; if pursuing more datasets, cap at 2-3 (Columbia/IMD2020 preferred, caution against casually mixing in Coverage's copy-move data); avoid scope creep.
+- A later, more concrete 5-step plan (from a "third AI"): (1) randomize ELA generation quality, (2) merge CASIA1+CASIA2, (3) retrain, (4) validate informally on personal out-of-dataset photos, (5) only if that still fails, add a second signal (SRM/noise residual).
+
+**This assistant's standing position across the whole conversation, consistently applied:** agree with the overall sequencing (fix data/ELA robustness first, defer architecture and second-signal decisions), but with corrections:
+- Don't skip cheap confirmatory tests (e.g., shifting the ELA reference quality to see if the resonance point relocates accordingly) just because the mechanism "feels" understood — cheap causal confirmation is worth more to a math-oriented committee than a plausible story.
+- **Distinguish two different, non-interchangeable augmentation axes**: (a) randomizing the *source image's simulated prior compression* before ELA extraction (this is what the Ultimate Test actually stress-tested, and what the original Section 6 plan specified) vs. (b) randomizing the *ELA extraction reference quality itself* (a related but different knob, structurally identical to the deployed server's `JPEG_QUALITY` parameter). **Both should be done — don't substitute one for the other.**
+- **An unresolved design question flagged but not yet decided:** once the ELA extraction quality is randomized during training, what single value (or ensemble strategy) does the deployed FastAPI server use at inference time? This still needs an explicit answer before any retrained model is deployed to the live demo.
+- Formal cross-dataset holdout (Columbia or IMD2020) should remain the **reported** generalization metric — informal "tried some personal photos" checks are a fine sanity check, not a substitute.
+- Percentage attributions like "55% data / 30% ELA-ceiling / 15% Q75-specific" floated by another AI are narrative intuition with no experiment behind them — fine for reasoning, should not appear in the thesis with that false precision.
+- SRM / second-forensic-signal and any two-branch-vs-early-fusion architecture decision remain **explicitly deferred**, per the student's own original guardrail, until the cheaper data/ELA-robustness fix is tried and shown insufficient.
+
+---
+
+## 7. PHASE 3: DATASET REGENERATION & RETRAINING (x1 augmentation, CASIA1+CASIA2 merged)
+
+### 7.1 Dataset generation — key engineering decisions (converged after several review rounds)
+- Fixed seeds (`random.seed(42)`, `np.random.seed(42)`) for reproducibility.
+- **`q_primary`** (simulated primary/history compression quality) and **`q_ela`** (internal ELA-extraction reference quality) sampled **independently**. This was proposed to be coupled (`q_ela <= q_primary`, "physically realistic recompression chains") by two different reviewing AIs, on two separate occasions — **rejected both times**: `q_ela` is an internal analysis parameter, not a real historical event on the image (same role as the server's `JPEG_QUALITY`), and coupling degenerates badly at the low end of the quality-preset range, killing variety exactly where the model was empirically shown weakest.
+- **ELA maps saved as PNG, not JPEG quality=100.** This was the single mandatory fix from the first review round: JPEG@100 is not truly lossless and would reintroduce a smaller version of the exact double-quantization artifact class being fixed, one step downstream, in the very data meant to fix it.
+- `Image.MAX_IMAGE_PIXELS` set to a generous finite cap (`100_000_000`) rather than fully disabled — safer for large CASIA TIFFs; **never carry the disabled/loosened guard into the FastAPI server**, which faces untrusted uploads.
+- Train/test split performed at the **source-file level**, before augmentation — correctly avoids train/test leakage even as multiple augmented derivatives are generated per source file.
+- **CSV logging added** (`dataset_log.csv`: filename, source_dataset, original_filename, split, class, q_primary, q_ela) — this turned out to be essential infrastructure, reused repeatedly later for leakage-safe evaluation sampling.
+- `JPEG_PRESETS_PRIMARY` extended down to include 50/55/60 (not just 65–100) to match the diagnostic sweep's tested range — this was a real gap, flagged once, and took a while to actually get fixed.
+
+### 7.2 Training pipeline
+- Custom `ELADataset` explicitly assigns REAL=0, FAKE=1 — deliberately avoiding `ImageFolder`'s alphabetical class-index assignment (which would have silently flipped every other script's FAKE=1 convention). Flagged as a real risk before it happened; confirmed **not** to have occurred.
+- Training loop evolved from a naive fixed-4-epoch loop (no validation tracking) to a proper loop: AdamW, `weight_decay`, `label_smoothing=0.05`, `ReduceLROnPlateau`, a real validation split, and early stopping (patience=4) saving the best-by-val-loss checkpoint.
+- **First result (naive 4-epoch, x1 augmentation, CASIA1+CASIA2):** test accuracy 68%, FAKE recall 0.55, REAL recall 0.79. (Down from the old CASIA1-only, fixed-Q75, 86% figure — expected and reassuring, since that old number was almost certainly inflated by the exact Q75-anchoring shortcut being diagnosed.)
+- **Retrain with the proper val/early-stopping loop:** best epoch selected was **epoch 1** — val loss rose monotonically after that, near the random-guess loss floor. FAKE recall did not improve (0.52) versus the naive run; accuracy stayed ~69%. **Conclusion: training duration was not the bottleneck** — a barely-trained and a more-trained model landed in the same place, meaning something structural (data/signal, possibly BatchNorm instability given widely varying per-sample ELA amplitude statistics) was capping performance regardless of epoch count.
+
+---
+
+## 8. PHASE 4: THRESHOLD CALIBRATION (ROC-AUC / PR-AUC)
+
+- **ROC-AUC = 0.74** on the x1-augmentation model — the critical missing diagnostic. Confirmed real, moderate-to-good discriminative power existed all along; the near-50% accuracy readings were mostly a **threshold-placement problem**, not an absence of signal.
+- Threshold selection done properly: Youden's J and F1-optimal thresholds computed on a **validation** set (not test — avoids tuning-on-test leakage), then applied to the untouched test set for final reporting. Both criteria converged on the same value (**0.3818**) — verified as a genuine, not coincidental, convergence by inspecting F1/J values at neighboring threshold candidates (both nearly flat, both peaking at the same index).
+- Applying threshold 0.3818 to test: REAL recall 0.67, FAKE recall 0.71 (up from 0.52 at default 0.5), accuracy flat (~0.68), **PR-AUC = 0.6612** (note: PR-AUC's no-skill baseline is the FAKE-class prevalence, ~0.423, not 0.5 — important to state explicitly, unlike ROC-AUC).
+- **Live literature check performed** (web search) on published CASIA2 ELA+CNN baselines: figures span roughly 70%–99%, and it is often unclear from abstracts whether high numbers come from source-disjoint splits or more leakage-prone random splits. This project's honestly source-split ~69% is defensible as methodologically conservative rather than simply "worse" — worth stating explicitly in the thesis as a methodology point.
+- **Strategic recommendation, not yet acted on:** keep the Youden's-J threshold as the "science"/reported result (justified as prioritizing forgery-detection sensitivity), but consider a separate, less aggressive threshold (e.g., F1-optimal or default 0.5) for the **live FastAPI demo**, since a ~33.5% false-positive rate on authentic images is risky in front of a committee.
+
+---
+
+## 9. PHASE 5: REPEATED-AUGMENTATION RETRAIN (x4) — CURRENT STATE, INCLUDING AN OPEN BUG
+
+### 9.1 What changed
+`AUGMENTATIONS_PER_IMAGE` increased from 1 to 4 — testing a different hypothesis than before: not "does variety *across* images help" but **"does the same source image need to produce a consistent verdict across multiple different quality realizations."** `q_primary`/`q_ela` per augmentation now drawn via `random.sample` (guaranteeing 4 distinct values per image) instead of independent `random.choice` (which could accidentally repeat a value across an image's augmentations).
+
+### 9.2 Training result
+Dataset scaled exactly 4x (41123/4569/11432 train/val/test — confirmed as a clean internal consistency check). Training showed the same loss/accuracy-divergence pattern as before (best val loss at epoch 2, val accuracy still climbing to ~73% even as val loss rose) — correctly explained as expected CrossEntropy behavior (confident wrong answers penalized harder than accuracy reflects).
+
+### 9.3 ⚠️ CRITICAL UNRESOLVED ISSUE — flagged multiple times, not yet fixed as of this writing
+**The train/val split (in both the training notebook and the separate ROC/threshold script) still uses plain `torch.utils.data.random_split` on the flat augmented file list**, with no awareness that each source image now yields 4 files. This can put different quality-realizations of the *same* source image on both sides of the train/val split — meaning val isn't cleanly independent anymore, and both early-stopping's checkpoint selection AND the val-based threshold selection built on it may be distorted (optimistic, and/or selecting a checkpoint that fits leaked near-duplicates rather than one that truly generalizes).
+
+**A fix has been written but not yet integrated or tested**: `build_source_aware_val_split(dataset, csv_log_path, val_frac=0.1, seed=42)` — groups all generated files by `original_filename` (from `dataset_log.csv`), shuffles and splits at the **source-image level**, then translates back to dataset indices via filename matching, returning `Subset` objects. Must be used identically (same CSV, same seed) in both the training script and any threshold-selection script that needs "the same val set."
+
+### 9.4 The confusing result this bug likely explains
+A "battle" comparison script (V1 x1-aug vs. V2 x4-aug, JPEG quality sweep 100→50, on **raw, never-augmented CASIA1 images restricted via the CSV log to genuinely test-split sources**, with per-model calibrated thresholds V1=0.3818/V2=0.5036, fixed seeds, both accuracy and FAKE recall plotted) showed **V2 performing *worse* than V1 on both metrics, averaged across the whole sweep** — the opposite of the intended improvement. Worst point: FAKE recall collapsed to 38% (below chance) at exactly Q=75 for V2, vs. 77% for V1 at the same point — i.e., the original resonance point is *still* a major weak spot, arguably worse, for the newer model.
+
+**Standing recommendation, not yet executed:** before concluding "more augmentation hurts," rule out mundane explanations in this order:
+1. Confirm the V2 checkpoint file genuinely is the intended best-val-loss epoch (filenames diverged slightly across scripts — `model_resnet_ela_LATEST.pth` during training vs. `model_resnet_ela_finetuned_v2.pth` referenced later — plausible if manually renamed, but worth a positive confirmation, not an assumption).
+2. Confirm the val-derived threshold (0.5036) was computed from V2's own val probabilities, not stale/reused from V1.
+3. **Most likely cause:** integrate `build_source_aware_val_split`, regenerate the train/val split cleanly, retrain (or at minimum redo checkpoint selection and threshold selection) on the corrected split, and rerun the exact same battle-comparison sweep. If the regression disappears, leakage-driven bad selection was the cause. **If it persists even with a clean split, that becomes a real, earned, citable finding** — and a legitimate thesis result either way ("we tested whether more augmentation improves robustness, found a regression, traced it to X").
+
+---
+
+## 10. OPEN / UNRESOLVED ITEMS (prioritized)
+
+1. **[HIGH PRIORITY, ACTIVE BUG]** Source-aware train/val split not yet integrated for the x4 dataset — see Section 9.3–9.4. This is blocking trust in the most recent comparison result.
+2. **[HIGH PRIORITY, LONGSTANDING]** No formal cross-dataset holdout (Columbia or IMD2020) has ever been run. This is the single most important missing piece for the thesis's core generalization claim.
+3. Frontend hardcoded placeholder sub-metrics / fake EXIF fields — flagged since the original build, still unresolved. Not blocking ML work, but a defense risk if left to the last week.
+4. Inference-time ELA-extraction-quality decision for the deployed FastAPI server, given training now uses randomized/varied quality — needs an explicit choice (fixed value, e.g. ~80, vs. an ensemble over several values) before any retrained model reaches the live demo.
+5. Live-demo decision threshold vs. reported "science" threshold — recommended to diverge (see Section 8) but not yet implemented in the server.
+6. SRM / second forensic signal and any architecture decision (two-branch late fusion vs. multi-channel early fusion) — deliberately deferred pending the outcome of items 1 and 2 above, per the student's own original guardrail (cap additional datasets at 2-3; do not add a third detection algorithm such as copy-move keypoint matching — that would be a separate system).
+
+---
+
+## 11. KEY REUSABLE ARTIFACTS (script inventory, for quick orientation)
+
+- **Dataset generation script** (latest version): CASIA1+CASIA2 merge, source-level train/test split, independent `q_primary`/`q_ela` via `random.sample` with uniqueness `assert`s, PNG output, CSV logging (`dataset_log.csv`), `JPEG_PRESETS_PRIMARY` covering 50–100, `JPEG_PRESETS_ELA` covering 65–100, `AUGMENTATIONS_PER_IMAGE` currently 4.
+- **`ELADataset`** (training-side): explicit REAL=0/FAKE=1 folder-based loader, avoids `ImageFolder` index trap.
+- **Training notebook**: ResNet18 full fine-tune, AdamW + weight decay + label smoothing + ReduceLROnPlateau + early stopping on val loss, saves best checkpoint.
+- **ROC/threshold-selection script**: val-based Youden's J and F1-optimal threshold search, applied cleanly to held-out test set, PR-AUC computed with correct baseline awareness.
+- **Quality-sweep diagnostic script(s)**: single-image → 3-image (fake/fake/control) → 100+100-image "ultimate test" → V1-vs-V2 "battle" comparison with CSV-based safe (test-split-only) sampling and per-model calibrated thresholds.
+- **`build_source_aware_val_split()`** (newly written, NOT yet integrated into the training/threshold scripts): the pending fix for Section 9.3.
+- Original FastAPI server + frontend ("AEGIS // VISION") — functional, but still carries the placeholder-metrics issue from Section 3, and has not yet been updated with a retrained model or a decided inference-time ELA-quality strategy.
+
+---
+
+## 12. GUARDRAILS / CONSTRAINTS (unchanged from original, still binding)
+
+- Topic is fixed. Do not propose changing it.
+- Architectural additions **within** this topic (SRM, multi-channel fusion, two-branch fusion) are legitimate to discuss, but only as evidence-gated next steps, not defaults — see Section 6 and Section 10 item 6.
+- Cap total additional datasets at 2–3 beyond CASIA1+CASIA2 (Columbia and/or IMD2020 preferred for cross-dataset holdout).
+- Do not add a third detection algorithm (e.g., copy-move via keypoint matching) — flagged by the student as scope creep to avoid.
+- Prefer diagnosing before architecting — this has been the consistent, evidence-validated approach throughout every phase above; don't abandon it under time pressure.
+- Be direct about overclaiming: several points in this project (the resonance mechanism, the augmentation regression) looked more "proven" at first glance than the sample sizes actually supported. Keep language calibrated for a mathematically literate committee — they will notice inflated certainty.
+
+---
+
+## 13. WHAT TO DO NEXT / WHAT'S NEEDED FROM YOU
+
+Immediate next action: integrate `build_source_aware_val_split()` into both the training notebook and the ROC/threshold script (same CSV path, same seed, so both use "the same" val set), regenerate checkpoint selection and threshold selection on the corrected split, and rerun the exact three-artifact comparison (held-out classification report, ROC/PR-AUC, and the V1-vs-V2 quality-sweep battle) to see whether the x4-augmentation regression from Section 9.4 disappears or persists.
+
+Then, per the decision fork established in Section 6: if metrics improve and the quality-sweep margins widen once the split is fixed, ELA-with-proper-training is likely sufficient — pivot to the still-missing cross-dataset holdout (item 2 in Section 10), which the whole thesis generalization narrative is waiting on. If the regression or weak margins persist even with a clean split, that is now earned, real evidence for pursuing a second forensic signal (SRM) — the trigger condition the student's own plan set for that step.
+
+Continue the established working style: verify before concluding, distinguish correlation from confirmed mechanism, keep percentage/confidence claims calibrated to actual sample sizes, and default to the cheapest diagnostic that can rule an explanation in or out before reaching for a bigger fix (more epochs, new architecture, new dataset).

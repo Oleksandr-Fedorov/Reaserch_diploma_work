@@ -1,0 +1,110 @@
+PROJECT BRIEFING: Image Manipulation Detector — Master's Thesis
+
+Context transfer for a new AI session. This project has been developed across a long conversation with hands-on experimentation. Please read fully before advising — several naive suggestions (switch topic, just use a bigger model, add more datasets blindly) have already been explored and rejected for specific reasons stated below.
+
+1. WHO I AM
+
+Master's student in Computer Science. Thesis defense in ~4-5 months from now. Committee: applied mathematicians, microcontroller/acoustics/ballistics specialists — NOT deep ML experts. This is an advantage (no library-level nitpicking) but means the narrative and measurable results matter more than implementation minutiae.
+
+Technical profile: Familiar with classical neural nets (Hopfield, Hamming, Kohonen, ART). Built a music genre classifier before (librosa, basic audio ML). Can build web apps with interfaces. Some low-level optimization experience (C/C++/Rust, AI-assisted). Weak local GPU, but access to Google Colab (~5h/day) plus newly identified free-tier resources: Kaggle (30h/week, T4x2, 12h sessions), Lightning AI (~22 GPU-hours/month), SageMaker Studio Lab (4h GPU/day, persistent 15GB storage), Paperspace Gradient (rolling 6h free sessions).
+
+Thesis formal requirements: research novelty (not just implementing something known), engineering complexity (multiple technologies, architecture), measurable results (metrics, comparison), experimental section, theoretical grounding (survey of existing approaches), working prototype with an interface, topical relevance.
+
+2. TOPIC (FIXED — DO NOT SUGGEST CHANGING)
+
+Image manipulation detector with localization and explainability.
+
+System takes an image, determines if it was manipulated (object insertion/splicing), and shows WHERE, not just a verdict.
+
+Three planned components:
+
+
+ELA module (Error Level Analysis) — hand-implemented algorithm, not ML. Detects JPEG recompression artifact inconsistencies.
+CNN classifier — fine-tuned on ELA maps, classifies authentic/manipulated.
+GradCAM module — explainability, shows heatmap of what the network attended to.
+
+
+Research question (original): Does ELA preprocessing improve CNN accuracy vs feeding raw images? (Answered — see results below.)
+
+Note on my psychology, relevant for advice-giving: I have a documented pattern of topic-hopping driven by fear that any given topic isn't good enough, and a tendency to want to expand scope (add SNN, Rust, video, new architectures) before finishing the current step. I have explicitly committed to NOT changing topics further. Architectural additions within this topic (see Section 6) are legitimate — pure topic changes are not. If you're unsure whether a suggestion is "expanding within topic" vs "changing topic," ask rather than assume.
+
+3. WHAT HAS BEEN DONE (chronological, all hands-on, all results real)
+
+Step 1 — ELA implementation & manual exploration. Wrote ela.py. Tested on real CASIA1 image pairs. Found experimentally: ELA gives strong signal when object history-of-compression differs from background (e.g., black square pasted on face), weak/noisy signal when spliced object + background share similar recompression history, and no signal at all when the whole composite is uniformly resaved (bird-in-garden case — visually obvious splice, ELA showed uniform noise, no localization).
+
+Step 2 — Dataset preparation. Batch script converts CASIA1 Au/Sp folders into REAL_/FAKE_ prefixed ELA maps. 1721 images generated.
+
+Step 3 — Four training experiments (CASIA1 only, standard 80/20 split, seed fixed):
+
+ModelAccuracyF1 (FAKE)NotesSimple CNN, raw RGB (no ELA)50.7%—Baseline — confirms no signal in raw pixels for this small netSimple CNN, ELA input76%0.70First confirmation ELA carries signalResNet18 (frozen backbone) + ELA70%0.70Frozen ImageNet weights are suboptimal for ELA-domain texturesResNet18 (full fine-tune) + ELA86%0.85Best result so far, on CASIA1 test split
+
+Confusion matrices and sklearn classification reports were generated for each. GradCAM was implemented and shows the network attending to splice boundaries (where JPEG block-grid mismatch concentrates), not the object interior — makes sense physically.
+
+Step 4 — Full-stack prototype ("AEGIS // VISION"). FastAPI backend (in-memory ELA generation matching training-time math exactly, ResNet18 fine-tuned inference, GradCAM overlay, base64 image responses) + a polished web frontend (forensic-analyst aesthetic: verdict, confidence %, ELA/heatmap toggle, metadata panel). Working end-to-end.
+
+Known issue flagged and fixed: frontend originally had hardcoded fake sub-metrics ("Noise Inconsistency: 84.1%" etc.) and fake EXIF data not derived from real analysis — flagged as a defense-risk (a committee member could ask how a displayed number is computed and there'd be no real answer). Not yet resolved — see open items.
+
+4. THE CORE PROBLEM DISCOVERED (this is the current frontier)
+
+Tested the deployed model on images outside its training distribution:
+
+
+A manually-composited image (real head swapped onto a real cat body, saved as fresh JPEG) → classified REAL, high confidence. Recompression flattened the ELA signal (expected, matches Step 1 findings).
+An image pulled directly from CASIA2 Tp folder (model was trained only on CASIA1) → classified AUTHENTIC, 95.99% confidence, despite being a known splice.
+
+
+This is a generalization failure, not randomly bad luck. Two non-exclusive candidate explanations are on the table:
+
+Hypothesis A — Data/generalization problem: Model overfit to CASIA1-specific characteristics (camera sources, JPEG quality distribution, splice style), not to "manipulation" as a general concept. Fixable by training on more diverse data + augmentation.
+
+Hypothesis B — Feature-sufficiency problem: ELA alone is fundamentally blind to certain manipulation types (heavy recompression, well-blended/feathered edges, color-matched splices) regardless of how much data or which architecture processes it. No amount of training recovers information that isn't in the input.
+
+Current belief (not yet proven): likely a mix, with data/generalization being the larger share but ELA's ceiling being real. This has NOT been rigorously tested yet — see Section 6, Step 0.
+
+5. TWO ROUNDS OF ARCHITECTURAL ADVICE RECEIVED (for your awareness — don't just repeat these)
+
+Round 1 advice (mine, an AI assistant): proposed jumping to a two-branch fusion architecture (separate ResNet18 per signal: ELA branch + Noise-residual branch, concatenate features before final FC), citing forensics literature precedent (RGB-N style late fusion is more standard than early-channel-stacking, per papers like Zhou et al. RGB-N).
+
+Round 2 advice (a different AI, more skeptical): pushed back hard — argued architecture changes are premature until it's proven whether the bottleneck is (a) insufficient/narrow training data or (b) fundamental insufficiency of the ELA feature itself. Proposed:
+
+
+Don't build dual-stream yet. Test multi-channel stacking (RGB+ELA+Noise+SRM as extra input channels into a single ResNet, modifying conv1 to accept N channels) as a cheaper first architectural step.
+Before any architecture change: run diagnostic/ablation experiments — (1) recompression-robustness test: same fake image saved at JPEG q=95→60, run through the model, check if confidence swings wildly (would indicate the model is reading JPEG-specific noise rather than manipulation semantics); (2) error breakdown by manipulation type (crude paste / feathered / color-matched / copy-move) on existing test data — no new training required for either.
+If pursuing more datasets: CASIA2 + Columbia + IMD2020 preferred; flagged that Coverage is a copy-move dataset (different artifact signature than splicing) and shouldn't be casually mixed in without caveats; cautioned against collecting 5-6 datasets at once as scope creep.
+Also proposed multi-task learning (classification + coarse localization) as a later-stage idea, contingent on some datasets having ground-truth masks.
+
+
+I (this session's assistant) partially agree with Round 2's methodology (diagnose before you architect) but pushed back on a few of its specifics — worth you forming your own view rather than deferring to either.
+
+6. RECOMMENDED PLAN GOING FORWARD (my current position, open to challenge)
+
+Step 0 (do first, no training required, one evening):
+
+
+Recompression-robustness test — same fake image at multiple JPEG qualities, check prediction stability.
+Manual error breakdown by manipulation type on current test set.
+
+
+These two results should indicate whether we're closer to Hypothesis A or B before spending GPU-hours.
+
+Step 1 — Dataset expansion (moderate priority regardless of Step 0 outcome): Merge CASIA1 + CASIA2 for training. Add JPEG-quality augmentation applied to the source image before ELA generation (not to the ELA map itself). Consider Columbia and/or IMD2020 as a held-out cross-dataset test set (train on one combination, test on another — proper cross-dataset evaluation, not just a random split within a merged set).
+
+Step 2 — Second independent signal, only if Step 0 points to Hypothesis B: Implement a Noise Residual module (SRM filter or Laplacian-based, non-ML, same spirit as ela.py) as an algorithmic second forensic signal. Compare Noise-only vs ELA-only vs combined, ideally via cross-dataset eval to make the comparison meaningful.
+
+Step 3 — Architecture decision, deferred until Steps 0-2 give evidence: Choose between multi-channel single-network input (simpler, faster, weaker theoretical grounding) vs two-branch late fusion (closer to published forensics practice, more parameters, more defensible if asked "why this architecture" at defense) based on what Step 2 shows. Not decided yet — deliberately.
+
+Explicit guardrail: cap total additional datasets at 2-3. Do not add a third detection algorithm (e.g., copy-move via keypoint matching) — that would be a separate system, flagged in my own original constraints as the kind of overengineering to avoid.
+
+7. OPEN / UNRESOLVED ITEMS
+
+
+Frontend still has hardcoded placeholder sub-metrics and fake EXIF fields not derived from real computation — needs either removal or replacement with real computed values (e.g., a real noise-variance number once Step 2 exists).
+No cross-dataset evaluation has been run yet (all four current results are same-dataset, random-split — acknowledged as insufficient evidence of generalization).
+Timeline: ~4-5 months to defense, currently well ahead of a typical pace for this stage.
+
+
+8. WHAT I NEED FROM YOU
+
+Please engage with Section 6 critically — confirm, challenge, or refine the plan given everything above. Do not propose changing the topic. Do not propose scope expansions beyond what's already flagged as a guardrail without explicitly justifying why it's worth breaking that guardrail. If recommending Step 0 diagnostics, feel free to give exact code/methodology — that's the immediate next action(done look contini).
+
+9. Currently
