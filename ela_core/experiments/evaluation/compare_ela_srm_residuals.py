@@ -15,7 +15,7 @@ import io
 # УКАЖИ ПУТЬ К ТВОЕМУ КОТУ
 TEST_IMAGE_PATH = "D:/Diplom/ela_core/datasets/Some_data_sets/CASIA2/Tp/Tp_D_CRD_S_O_ani10111_ani10103_10635.jpg" 
 ROOT_DIR = Path(__file__).resolve().parents[2]
-PLOTS_DIR = ROOT_DIR / "artifacts" / "images" / "plots"
+PLOTS_DIR = ROOT_DIR / "artifacts" / "figures"
 PLOTS_DIR.mkdir(parents=True, exist_ok=True)
 
 def get_ela(img_path, quality=75):

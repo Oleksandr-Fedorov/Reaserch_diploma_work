@@ -16,7 +16,7 @@ from PIL import Image
 TEST_IMAGE_PATH = "D:/Diplom/ela_core/datasets/Some_data_sets/CASIA2/Au/Au_ani_00001.jpg"
 TEST_QUALITIES = list(range(100, 45, -5)) # От 100 до 50 с шагом 5
 ROOT_DIR = Path(__file__).resolve().parents[2]
-PLOTS_DIR = ROOT_DIR / "artifacts" / "images" / "plots"
+PLOTS_DIR = ROOT_DIR / "artifacts" / "figures"
 PLOTS_DIR.mkdir(parents=True, exist_ok=True)
 
 def calculate_entropy(img_array):
