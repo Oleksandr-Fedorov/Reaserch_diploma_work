@@ -1,0 +1,5 @@
+model,TN,FP,FN,TP
+rgb,48,135,7,173
+ela,1,182,0,180
+decision_fusion,6,177,0,180
+feature_fusion_v2,74,109,22,158

@@ -1,0 +1,321 @@
+{
+  "mode": "cached",
+  "input_contract": {
+    "class_to_idx": {
+      "REAL": 0,
+      "FAKE": 1
+    },
+    "prob_fake": "softmax(logits, dim=1)[:, 1]",
+    "rgb": "offline q_primary-recompressed RGB PNG, not an unprocessed original",
+    "ela": "paired offline ELA PNG; no online recompression or second ELA transform",
+    "ela_generation": "abs(simulated RGB - JPEG(q_ela)) * 10, clip [0,255], uint8",
+    "pairing": "same filename, augmentation and label in RGB and ELA",
+    "transform": "PIL convert RGB -> Resize((224,224), bilinear) -> ToTensor",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "fusion_order": [
+      "rgb_512",
+      "ela_512"
+    ],
+    "fusion_head": "Linear(1024,256), ReLU, Dropout(0.5), Linear(256,2); eval()",
+    "evidence": [
+      "notebooks/Colab.ipynb cells 13,20,23 (zero-based)",
+      "experiments/preprocessing/merge_CASIA2.py",
+      "experiments/preprocessing/merga_CASIA3_RGB.py"
+    ]
+  },
+  "models": {
+    "rgb": {
+      "rows": 11432,
+      "threshold": 0.5,
+      "comparison": "prob_fake >= threshold",
+      "confusion_matrix": [
+        [
+          5009,
+          1583
+        ],
+        [
+          2086,
+          2754
+        ]
+      ],
+      "accuracy": 0.6790587823652904,
+      "macro_f1": 0.6660657778480081,
+      "balanced_accuracy": 0.6644343506780069,
+      "roc_auc": 0.7800468762537109,
+      "average_precision_fake": 0.6398578779872968,
+      "per_class": {
+        "REAL": {
+          "precision": 0.7059901338971106,
+          "recall": 0.7598604368932039,
+          "f1-score": 0.7319354131657777,
+          "support": 6592.0
+        },
+        "FAKE": {
+          "precision": 0.635001152870648,
+          "recall": 0.5690082644628099,
+          "f1-score": 0.6001961425302387,
+          "support": 4840.0
+        },
+        "accuracy": 0.6790587823652904,
+        "macro avg": {
+          "precision": 0.6704956433838793,
+          "recall": 0.6644343506780069,
+          "f1-score": 0.6660657778480081,
+          "support": 11432.0
+        },
+        "weighted avg": {
+          "precision": 0.6759353168775096,
+          "recall": 0.6790587823652904,
+          "f1-score": 0.6761605645062247,
+          "support": 11432.0
+        }
+      },
+      "stored_pred_label_mismatches": 0
+    },
+    "ela": {
+      "rows": 11432,
+      "threshold": 0.5,
+      "comparison": "prob_fake >= threshold",
+      "confusion_matrix": [
+        [
+          5152,
+          1440
+        ],
+        [
+          2052,
+          2788
+        ]
+      ],
+      "accuracy": 0.6945416375087474,
+      "macro_f1": 0.680896363329647,
+      "balanced_accuracy": 0.6787932279547461,
+      "roc_auc": 0.7559130181587499,
+      "average_precision_fake": 0.6723909192779183,
+      "per_class": {
+        "REAL": {
+          "precision": 0.7151582454192116,
+          "recall": 0.7815533980582524,
+          "f1-score": 0.7468831545375472,
+          "support": 6592.0
+        },
+        "FAKE": {
+          "precision": 0.6594134342478714,
+          "recall": 0.5760330578512397,
+          "f1-score": 0.6149095721217468,
+          "support": 4840.0
+        },
+        "accuracy": 0.6945416375087474,
+        "macro avg": {
+          "precision": 0.6872858398335415,
+          "recall": 0.6787932279547461,
+          "f1-score": 0.680896363329647,
+          "support": 11432.0
+        },
+        "weighted avg": {
+          "precision": 0.6915573981423321,
+          "recall": 0.6945416375087474,
+          "f1-score": 0.6910091045994372,
+          "support": 11432.0
+        }
+      },
+      "stored_pred_label_mismatches": 0
+    },
+    "feature_fusion_v2": {
+      "rows": 11432,
+      "threshold": 0.2893,
+      "comparison": "prob_fake >= threshold",
+      "confusion_matrix": [
+        [
+          4073,
+          2519
+        ],
+        [
+          478,
+          4362
+        ]
+      ],
+      "accuracy": 0.7378411476557033,
+      "macro_f1": 0.7376735015705846,
+      "balanced_accuracy": 0.7595549075262777,
+      "roc_auc": 0.8022169057911419,
+      "average_precision_fake": 0.6824163963907163,
+      "per_class": {
+        "REAL": {
+          "precision": 0.8949681388705779,
+          "recall": 0.617870145631068,
+          "f1-score": 0.7310419097191062,
+          "support": 6592.0
+        },
+        "FAKE": {
+          "precision": 0.6339194884464467,
+          "recall": 0.9012396694214876,
+          "f1-score": 0.744305093422063,
+          "support": 4840.0
+        },
+        "accuracy": 0.7378411476557033,
+        "macro avg": {
+          "precision": 0.7644438136585123,
+          "recall": 0.7595549075262777,
+          "f1-score": 0.7376735015705846,
+          "support": 11432.0
+        },
+        "weighted avg": {
+          "precision": 0.7844471917001095,
+          "recall": 0.7378411476557033,
+          "f1-score": 0.7366571834351936,
+          "support": 11432.0
+        }
+      },
+      "stored_pred_label_mismatches": 0
+    },
+    "decision_fusion": {
+      "rows": 11432,
+      "threshold": 0.5,
+      "comparison": "prob_fake >= threshold",
+      "confusion_matrix": [
+        [
+          5194,
+          1398
+        ],
+        [
+          1978,
+          2862
+        ]
+      ],
+      "accuracy": 0.7046885934219734,
+      "macro_f1": 0.6918667267054364,
+      "balanced_accuracy": 0.6896235356655701,
+      "roc_auc": 0.7986256820187756,
+      "average_precision_fake": 0.6810846609625703,
+      "per_class": {
+        "REAL": {
+          "precision": 0.7242052426101506,
+          "recall": 0.7879247572815534,
+          "f1-score": 0.7547224643998838,
+          "support": 6592.0
+        },
+        "FAKE": {
+          "precision": 0.671830985915493,
+          "recall": 0.5913223140495868,
+          "f1-score": 0.6290109890109891,
+          "support": 4840.0
+        },
+        "accuracy": 0.7046885934219734,
+        "macro avg": {
+          "precision": 0.6980181142628218,
+          "recall": 0.6896235356655701,
+          "f1-score": 0.6918667267054364,
+          "support": 11432.0
+        },
+        "weighted avg": {
+          "precision": 0.70203139705363,
+          "recall": 0.7046885934219734,
+          "f1-score": 0.7014996214255791,
+          "support": 11432.0
+        }
+      }
+    }
+  },
+  "decision_fusion": {
+    "alpha_rgb": 0.5,
+    "threshold": 0.5,
+    "policy": "fixed",
+    "description": "Prespecified equal-weight baseline, no fitting"
+  },
+  "split_evidence": {
+    "basis": "INFERENCE from notebook cells 13/20/23 and retained ELA split manifest",
+    "checkpoint_contains_split_metadata": false,
+    "validation_rows": 4568,
+    "validation_sources": 1142,
+    "common_heldout_rows": 1948,
+    "rgb_training_rows_in_composite_validation": 2620,
+    "rgb_training_sources_in_composite_validation": 655,
+    "test_source_overlap": 0,
+    "validation_prediction_provenance": "Validation CSVs have no checkpoint hash or exported embeddings. Their filenames/labels agree; association to weights relies on retained scripts.",
+    "warning": "Composite head split alone does not establish end-to-end leakage-free validation: the frozen RGB backbone used a different split. Feature Fusion V2's validation selection has the same limitation; completed test evaluation remains retained."
+  },
+  "feature_threshold_provenance": "0.2893 from rounded validation output in notebook cell 23; full precision threshold and validation probabilities were not retained. Agreement with test pred_label is checked, never optimized on test.",
+  "sources": {
+    "rgb": {
+      "path": "D:\\Diplom\\ela_core\\models\\RGB_model\\rgb_test_predictions.csv",
+      "bytes": 671885,
+      "sha256": "e3c02e07cfaac1d39208f64b94ce0c9798425029e095d5d657a6ea7e0c3900a3"
+    },
+    "ela": {
+      "path": "D:\\Diplom\\ela_core\\models\\ELA_model\\ela_sourceaware_test_predictions.csv",
+      "bytes": 667671,
+      "sha256": "aa42929c6ccb40849786fbd63617ff710a0ffa22e987f669960c3a9bee326cea"
+    },
+    "feature_fusion_v2": {
+      "path": "D:\\Diplom\\ela_core\\artifacts\\fusion_v2\\fusion_v2_test_metadata.csv",
+      "bytes": 926200,
+      "sha256": "dac738fa42e1b81a899bad6b833dfd341839975521693c4ba5713ec541c2111a"
+    },
+    "rgb_val": {
+      "path": "D:\\Diplom\\ela_core\\models\\RGB_model\\rgb_val_predictions.csv",
+      "bytes": 264764,
+      "sha256": "a4539ab1eb2a209fbf18d62c4ff5e3b7395df67e484b33eacc6d52fc14347cd0"
+    },
+    "ela_val": {
+      "path": "D:\\Diplom\\ela_core\\models\\ELA_model\\ela_val_predictions.csv",
+      "bytes": 262487,
+      "sha256": "c22d3a650302f15a2ba269bf37f95adc43ea3437d44676ffa3003835703a0722"
+    }
+  },
+  "split_manifest": {
+    "path": "D:\\Diplom\\ela_core\\models\\ELA_model\\ela_sourceaware_split_v2.csv",
+    "bytes": 463564,
+    "sha256": "c3de8b5f4aae52ed7809027ff782e27cf29cab93bfb5d60c59a6d4836b8506a4"
+  },
+  "notebook_provenance": {
+    "path": "D:\\Diplom\\ela_core\\notebooks\\Colab.ipynb",
+    "bytes": 2823583,
+    "sha256": "f1094805dd50a9dc8efe82a1d91c5ed3a4ac615c5b2f63537aff5619da14542f"
+  },
+  "calibration_warning": "Common-validation is conditional on recovered historical split and validation CSV provenance; no independent checkpoint-to-val-prediction replay was possible.",
+  "checkpoint_verification": {
+    "strict_state_dict_load": true,
+    "finite_weights": true,
+    "fusion_backbones_exact_match": true,
+    "embedding_contract": "verified",
+    "head_replay_errors": {
+      "rgb_prob_max_abs": 2.0621070861981394e-06,
+      "ela_prob_max_abs": 1.0383361815913261e-06,
+      "fusion_prob_max_abs": 2.0346374507429488e-07,
+      "fusion_logits_max_abs": 1.1526794434502108e-06
+    },
+    "image_backbones_executed": false,
+    "limitation": "Head replay links weights and saved outputs given exported embeddings; it does not independently verify the original pixels or historical split.",
+    "checkpoint_fingerprints": {
+      "rgb": {
+        "path": "D:\\Diplom\\ela_core\\models\\RGB_model\\model_resnet_rgb_LATEST.pth",
+        "bytes": 44791499,
+        "sha256": "f3c74c865f315dec1430fd1abce84cb3b2018f1f336378f2239d057708148175"
+      },
+      "ela": {
+        "path": "D:\\Diplom\\ela_core\\models\\ELA_model\\model_resnet_ela_sourceaware_v2.pth",
+        "bytes": 44792523,
+        "sha256": "a3360126a9c104a43c51da173740c947901b496127e8417dcd612f8343dcf41b"
+      },
+      "feature_fusion_v2": {
+        "path": "D:\\Diplom\\ela_core\\models\\Fusion_v2\\model_fusion_sourceaware_v2.pth",
+        "bytes": 90631199,
+        "sha256": "833c9d2550647346eb50e33e6552a6957d264988d2199766c727ec5fe612cced"
+      }
+    }
+  },
+  "runtime": {
+    "python": "3.13.2",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3"
+  }
+}

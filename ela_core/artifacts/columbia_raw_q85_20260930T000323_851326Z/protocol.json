@@ -1,0 +1,3817 @@
+{
+  "experiment": "columbia_uncompressed_originals_q85_v1",
+  "frozen_utc": "2026-09-30T00:03:38.161556+00:00",
+  "dataset": {
+    "name": "Columbia Uncompressed Image Splicing Detection Evaluation Dataset",
+    "release": "official 4cam_auth / 4cam_splc; exact local file version pinned by manifest SHA-256",
+    "reference": "https://www.ee.columbia.edu/ln/dvmm/downloads/authsplcuncmp/",
+    "cohort": {
+      "files": 363,
+      "class_counts": {
+        "REAL": 183,
+        "FAKE": 180
+      },
+      "unique_file_hashes": 363,
+      "unique_decoded_rgb_hashes": 363,
+      "independent_source_count": null,
+      "independence_note": "Not established: shared scenes/crops and splice donors; file counts are not an independence claim.",
+      "excluded_non_dataset_files": [
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_02_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_05_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canong3_08_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_02_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_05_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_08_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_11_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_14_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_17_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_20_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_23_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_26_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_29_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_32_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_35_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/canonxt_38_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/kodakdcs330_01_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/kodakdcs330_01_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/kodakdcs330_02_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/kodakdcs330_02_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/kodakdcs330_03_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/kodakdcs330_03_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_02_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_05_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_08_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/nikond70_11_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/edgemask/Thumbs.db",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "REAL",
+          "relative_path": "4cam_auth/Thumbs.db",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_10_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_10_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_11_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_11_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_12_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_12_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_13_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_13_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_14_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_14_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_15_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_15_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_16_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_16_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_17_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_17_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_18_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_18_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_19_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_19_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_20_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_20_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_21_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_21_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_22_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_22_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_23_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_23_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_24_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_24_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_25_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_25_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_26_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_26_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_27_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_27_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_28_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_28_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_29_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_29_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_30_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_canonxt_sub_30_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_10_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_10_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_11_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_11_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_12_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_12_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_13_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_13_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_14_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_14_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_15_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_15_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_15_edgemask_old.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_15_edgemask_old_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_16_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_16_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_17_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_17_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_18_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_18_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_19_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_19_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_20_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_20_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_21_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_21_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_22_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_22_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_23_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_23_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_24_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_24_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_25_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_25_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_26_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_26_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_27_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_27_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_28_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_28_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_29_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_29_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_30_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_kodakdcs330_sub_30_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_10_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_10_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_11_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_11_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_12_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_12_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_13_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_13_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_14_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_14_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_15_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_15_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_16_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_16_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_17_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_17_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_18_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_18_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_19_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_19_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_20_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_20_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_21_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_21_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_22_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_22_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_23_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_23_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_24_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_24_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_25_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_25_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_26_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_26_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_27_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_27_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_28_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_28_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_29_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_29_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_30_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canong3_nikond70_sub_30_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_10_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_10_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_11_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_11_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_12_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_12_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_13_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_13_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_14_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_14_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_15_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_15_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_16_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_16_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_17_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_17_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_18_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_18_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_19_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_19_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_20_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_20_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_21_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_21_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_22_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_22_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_23_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_23_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_24_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_24_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_25_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_25_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_26_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_26_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_27_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_27_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_28_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_28_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_29_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_29_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_30_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/canonxt_kodakdcs330_sub_30_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_10_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_10_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_11_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_11_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_12_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_12_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_13_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_13_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_14_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_14_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_15_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_15_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_16_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_16_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_17_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_17_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_18_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_18_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_19_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_19_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_20_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_20_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_21_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_21_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_22_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_22_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_23_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_23_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_24_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_24_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_25_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_25_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_26_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_26_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_27_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_27_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_28_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_28_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_29_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_29_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_30_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_canonxt_sub_30_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_01_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_01_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_02_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_02_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_03_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_03_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_04_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_04_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_05_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_05_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_06_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_06_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_07_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_07_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_08_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_08_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_09_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_09_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_10_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_10_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_11_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_11_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_12_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_12_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_13_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_13_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_14_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_14_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_15_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_15_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_16_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_16_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_17_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_17_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_18_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_18_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_19_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_19_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_20_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_20_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_21_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_21_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_22_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_22_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_23_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_23_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_24_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_24_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_25_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_25_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_26_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_26_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_27_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_27_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_28_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_28_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_29_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_29_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_30_edgemask.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/nikond70_kodakdcs330_sub_30_edgemask_3.jpg",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/edgemask/Thumbs.db",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        },
+        {
+          "class": "FAKE",
+          "relative_path": "4cam_splc/Thumbs.db",
+          "reason": "hidden metadata or extension outside TIFF/BMP"
+        }
+      ]
+    },
+    "manifest": {
+      "path": "D:\\Diplom\\ela_core\\artifacts\\columbia_raw_q85_20260930T000323_851326Z\\manifest.csv",
+      "bytes": 93896,
+      "sha256": "ded56b0b4dbed27da71558c950d38300bef14919c4684ba210f8f2643badf110"
+    }
+  },
+  "class_to_idx": {
+    "REAL": 0,
+    "FAKE": 1
+  },
+  "preprocessing": {
+    "source_files": "original TIFF/BMP; read only; one prediction per file; no augmentation",
+    "decode": "Pillow Image.open -> convert RGB; no explicit EXIF transpose or ICC conversion",
+    "rgb": "decoded original RGB; no preliminary JPEG recompression",
+    "ela": "at native resolution: abs(RGB - decoded JPEG(RGB,q=85))*10; clip[0,255]; uint8",
+    "q_ela": 85,
+    "q_primary": null,
+    "jpeg_subsampling": "4:2:0 (Pillow subsampling=2)",
+    "jpeg_optimize": false,
+    "jpeg_progressive": false,
+    "q_ela_selection": "fixed before external predictions, within training grid [65,70,75,80,85,90,95,100]",
+    "ela_generator_reference": "ela_core/experiments/preprocessing/merge_CASIA2.py; Git blob 76a2dd752aa278c742ffcff765569112800395c1",
+    "both_inputs": "PIL Resize((224,224), bilinear, antialias=True) -> ToTensor -> Normalize",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "models": {
+    "rgb": {
+      "threshold": 0.15752553939819336
+    },
+    "ela": {
+      "threshold": 0.4166847765445709
+    },
+    "decision_fusion": {
+      "threshold": 0.2981437146663666
+    },
+    "feature_fusion_v2": {
+      "threshold": 0.2767023742198944
+    }
+  },
+  "score": "softmax(logits,dim=1)[:,1]; uncalibrated FAKE score",
+  "decision_fusion": {
+    "alpha_rgb": 0.5,
+    "formula": "0.5*p_rgb + 0.5*p_ela"
+  },
+  "feature_fusion_v2": "[RGB_512, ELA_512] -> saved MLP; frozen identical backbones; eval mode",
+  "prediction_rule": "FAKE iff prob_fake >= model threshold",
+  "calibration_source": {
+    "policy": "common_validation_class_balanced_thresholds",
+    "policy_file": "balanced_calibration.json from casia_validation_audit.zip/results",
+    "policy_sha256": "6ad020317660da003269bfdbd6fd9cdeed18ba569c139bad8e4ff831cec715a9",
+    "validation_csv_sha256": "aeb1f9b5100b72cd26a56837e490d4e2d59a0e6d79aa4c160d3b87af7672c765",
+    "selection": "macro-F1 with total REAL weight 0.5 and total FAKE weight 0.5",
+    "validation_rows": 1948,
+    "validation_source_groups": {
+      "REAL": 71,
+      "FAKE": 416
+    },
+    "casia_test_previously_examined": true,
+    "calibration_is_post_hoc_protocol_refinement": true,
+    "external_predictions_used_to_select_parameters": false
+  },
+  "checkpoints": {
+    "rgb": {
+      "path": "D:\\Diplom\\ela_core\\models\\RGB_model\\model_resnet_rgb_LATEST.pth",
+      "bytes": 44791499,
+      "sha256": "f3c74c865f315dec1430fd1abce84cb3b2018f1f336378f2239d057708148175"
+    },
+    "ela": {
+      "path": "D:\\Diplom\\ela_core\\models\\ELA_model\\model_resnet_ela_sourceaware_v2.pth",
+      "bytes": 44792523,
+      "sha256": "a3360126a9c104a43c51da173740c947901b496127e8417dcd612f8343dcf41b"
+    },
+    "feature_fusion_v2": {
+      "path": "D:\\Diplom\\ela_core\\models\\Fusion_v2\\model_fusion_sourceaware_v2.pth",
+      "bytes": 90631199,
+      "sha256": "833c9d2550647346eb50e33e6552a6957d264988d2199766c727ec5fe612cced"
+    }
+  },
+  "evaluator": {
+    "path": "D:\\Diplom\\ela_core\\experiments\\evaluation\\unified_evaluator.py",
+    "bytes": 26591,
+    "sha256": "0db2bda739fc884a0005f6d52f1598851d969c4c43eeead6a87989f639cc66e7"
+  },
+  "script": {
+    "path": "D:\\Diplom\\ela_core\\experiments\\evaluation\\evaluate_columbia.py",
+    "bytes": 21809,
+    "sha256": "437abd31a13f27dde78f0407ccbaa7344e1328f1a7b0fe4de55e529f0ed0d8c1"
+  },
+  "runtime": {
+    "python": "3.13.2",
+    "torch": "2.12.1+cu126",
+    "torchvision": "0.27.1+cu126",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "scikit_learn": "1.9.0",
+    "pillow": "12.2.0",
+    "jpeg_codec": "8.0",
+    "device": "cpu",
+    "batch_size": 16,
+    "torch_threads": 2,
+    "inference_dtype": "float32; no AMP; TF32 disabled"
+  },
+  "metrics": [
+    "confusion_matrix",
+    "accuracy",
+    "macro_f1",
+    "roc_auc",
+    "recall_fake",
+    "fpr"
+  ],
+  "confusion_matrix_order": "rows=true REAL,FAKE; columns=predicted REAL,FAKE; [[TN,FP],[FN,TP]]",
+  "metric_weighting": "ordinary unweighted metrics, one row per original file",
+  "parameter_search": false,
+  "training": false,
+  "stress_test": false,
+  "imd2020_accessed": false,
+  "limitations": [
+    "Original Columbia TIFF/BMP is a distribution shift from CASIA JPEG-augmented PNG inputs.",
+    "q_ela=85 is a fixed protocol choice within the historical training grid, not an externally optimized setting.",
+    "Thresholds were selected on prepared CASIA validation pairs, not on Columbia or on a raw-file validation set.",
+    "Common CASIA validation membership is conditional on retained training code; checkpoints contain no split metadata.",
+    "Historical Feature Fusion V2 checkpoint selection retains the documented RGB validation-exposure limitation.",
+    "363 files are not 363 proven independent source photographs: authentic crops can share scenes and splices share donors.",
+    "Exact byte/pixel duplicate counts do not establish independence; donor/scene groups and cross-dataset visual duplicates are not audited.",
+    "No confidence interval or significance claim is made without a defensible independent-source grouping.",
+    "If Columbia results inform later changes, Columbia becomes development evidence; IMD2020 remains unexamined here."
+  ]
+}

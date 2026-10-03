@@ -1,0 +1,101 @@
+{
+  "created_utc": "2026-09-29T23:00:08.042691+00:00",
+  "validation_only_threshold_selection": true,
+  "selection_rule": "max macro-F1 over all distinct validation probabilities plus 0, .5, 1; >=",
+  "tie_rule": "within 1e-12, candidate closest to .5, then larger candidate",
+  "decision_fusion": {
+    "alpha_rgb": 0.5,
+    "alpha_policy": "fixed before calibration; no alpha search"
+  },
+  "input_contract": {
+    "class_to_idx": {
+      "REAL": 0,
+      "FAKE": 1
+    },
+    "prob_fake": "softmax(logits, dim=1)[:, 1]",
+    "rgb": "offline q_primary-recompressed RGB PNG, not an unprocessed original",
+    "ela": "paired offline ELA PNG; no online recompression or second ELA transform",
+    "ela_generation": "abs(simulated RGB - JPEG(q_ela)) * 10, clip [0,255], uint8",
+    "pairing": "same filename, augmentation and label in RGB and ELA",
+    "transform": "PIL convert RGB -> Resize((224,224), bilinear) -> ToTensor",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "fusion_order": [
+      "rgb_512",
+      "ela_512"
+    ],
+    "fusion_head": "Linear(1024,256), ReLU, Dropout(0.5), Linear(256,2); eval()",
+    "evidence": [
+      "notebooks/Colab.ipynb cells 13,20,23 (zero-based)",
+      "experiments/preprocessing/merge_CASIA2.py",
+      "experiments/preprocessing/merga_CASIA3_RGB.py"
+    ]
+  },
+  "split_evidence": {
+    "basis": "INFERENCE from notebook cells 13/20/23 and retained ELA split manifest",
+    "checkpoint_contains_split_metadata": false,
+    "validation_rows": 4568,
+    "validation_sources": 1142,
+    "common_heldout_rows": 1948,
+    "rgb_training_rows_in_composite_validation": 2620,
+    "rgb_training_sources_in_composite_validation": 655,
+    "test_source_overlap": 0,
+    "validation_prediction_provenance": "Validation CSVs have no checkpoint hash or exported embeddings. Their filenames/labels agree; association to weights relies on retained scripts.",
+    "warning": "Composite head split alone does not establish end-to-end leakage-free validation: the frozen RGB backbone used a different split. Feature Fusion V2's validation selection has the same limitation; completed test evaluation remains retained.",
+    "common_heldout_sources": 487
+  },
+  "verified_report": {
+    "path": "D:\\Diplom\\ela_core\\artifacts\\casia_verified_20260930\\metrics.json",
+    "bytes": 10983,
+    "sha256": "4845c3983073b3cb8f4fab1a115ea84059e52bf8c16e4870db5b1846209f7cc1"
+  },
+  "manifest": {
+    "path": "D:\\Diplom\\ela_core\\artifacts\\casia_calibrated_20260930\\validation_manifest.csv",
+    "bytes": 592803,
+    "sha256": "984b85f291251c65906a2c8dda65cdce127120187dff80dd707ae406a0c4fa21"
+  },
+  "scripts": {
+    "calibration": {
+      "path": "D:\\Diplom\\ela_core\\experiments\\evaluation\\calibrate_common_validation.py",
+      "bytes": 17768,
+      "sha256": "fa557f999188b4cedf739ccf8f1825c5d6af0c4b0c24263ec4a9d71acd1d646f"
+    },
+    "unified_evaluator": {
+      "path": "D:\\Diplom\\ela_core\\experiments\\evaluation\\unified_evaluator.py",
+      "bytes": 26591,
+      "sha256": "0db2bda739fc884a0005f6d52f1598851d969c4c43eeead6a87989f639cc66e7"
+    }
+  },
+  "checkpoints": {
+    "rgb": {
+      "path": "D:\\Diplom\\ela_core\\models\\RGB_model\\model_resnet_rgb_LATEST.pth",
+      "bytes": 44791499,
+      "sha256": "f3c74c865f315dec1430fd1abce84cb3b2018f1f336378f2239d057708148175"
+    },
+    "ela": {
+      "path": "D:\\Diplom\\ela_core\\models\\ELA_model\\model_resnet_ela_sourceaware_v2.pth",
+      "bytes": 44792523,
+      "sha256": "a3360126a9c104a43c51da173740c947901b496127e8417dcd612f8343dcf41b"
+    },
+    "feature_fusion_v2": {
+      "path": "D:\\Diplom\\ela_core\\models\\Fusion_v2\\model_fusion_sourceaware_v2.pth",
+      "bytes": 90631199,
+      "sha256": "833c9d2550647346eb50e33e6552a6957d264988d2199766c727ec5fe612cced"
+    }
+  },
+  "limitations": [
+    "Common validation is inferred from retained notebook code and the ELA source manifest; checkpoints do not contain a recorded training split.",
+    "Recalibrating thresholds does not redo historical checkpoint/epoch selection or remove its documented validation-exposure limitation for Fusion V2.",
+    "Four variants of one source are correlated. Row counts are not counts of independent source images; donor relationships and visual duplicates are not audited here.",
+    "Prepared PNG paths do not independently prove historical JPEG/ELA generation settings.",
+    "CASIA test was already examined. This is a separately recorded recalculation, not a new independent holdout. No Columbia or IMD2020 data are used."
+  ]
+}

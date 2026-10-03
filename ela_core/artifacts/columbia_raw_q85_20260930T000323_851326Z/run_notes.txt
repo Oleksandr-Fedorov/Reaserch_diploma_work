@@ -1,0 +1,23 @@
+Columbia original-file holdout, q_ela=85. All metric values are fractions.
+FAKE=1; classify FAKE when score >= the frozen threshold.
+Confusion matrix: [[TN,FP],[FN,TP]], rows=true / columns=predicted.
+Files: 363. Proven independent source count: not established.
+
+            model  threshold  accuracy  macro_f1  roc_auc  recall_fake      fpr
+              rgb   0.157526  0.608815  0.556189 0.776594     0.961111 0.737705
+              ela   0.416685  0.498623  0.337538 0.521190     1.000000 0.994536
+  decision_fusion   0.298144  0.512397  0.366942 0.759077     1.000000 0.967213
+feature_fusion_v2   0.276702  0.639118  0.618701 0.706163     0.877778 0.595628
+
+Limitations:
+- Original Columbia TIFF/BMP is a distribution shift from CASIA JPEG-augmented PNG inputs.
+- q_ela=85 is a fixed protocol choice within the historical training grid, not an externally optimized setting.
+- Thresholds were selected on prepared CASIA validation pairs, not on Columbia or on a raw-file validation set.
+- Common CASIA validation membership is conditional on retained training code; checkpoints contain no split metadata.
+- Historical Feature Fusion V2 checkpoint selection retains the documented RGB validation-exposure limitation.
+- 363 files are not 363 proven independent source photographs: authentic crops can share scenes and splices share donors.
+- Exact byte/pixel duplicate counts do not establish independence; donor/scene groups and cross-dataset visual duplicates are not audited.
+- No confidence interval or significance claim is made without a defensible independent-source grouping.
+- If Columbia results inform later changes, Columbia becomes development evidence; IMD2020 remains unexamined here.
+
+Do not select thresholds/q_ela on these results. Preserve IMD2020 for a later independent check.
